@@ -32,7 +32,7 @@ async function resolveSecret(secretName, envFallbackKey) {
 
 // --- Go Optimization Engine Client / Fallback ---
 async function runAllocationEngine(payload) {
-    const goEngineUrl = process.env.GO_ENGINE_URL || 'http://localhost:8080/api/v1/optimize-schedule';
+    const goEngineUrl = process.env.GO_ENGINE_URL || 'http://localhost:3000/api/v1/optimize-schedule';
     try {
         const response = await axios.post(goEngineUrl, payload, { timeout: 5000 });
         return response.data;
